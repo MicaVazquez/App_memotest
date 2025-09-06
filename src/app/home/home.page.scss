@@ -1,27 +1,151 @@
-#container {
+ion-content {
+  --background: linear-gradient(
+    135deg,
+    #fccd2a,
+    #f86f03
+  ); /* De amarillo a naranja */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  background-color: #fccd2a;
+  color: #821131;
+  border-bottom: 1px solid #821131;
+}
+
+.header ion-button {
+  margin: 0 10px;
+  --background: #821131;
+  --color: white;
+  border: 2px solid #fccd2a;
+}
+
+.box {
+  border-radius: 10px;
+  border: 2px solid #821131;
+  box-shadow: 2px 2px 12px rgba(130, 17, 49, 0.4);
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  width: 100%;
+  max-width: 400px;
+  /* height: 90%; → Eliminala o comentala */
+  margin-top: 10px;
+  margin-left: 14px;
+  box-sizing: border-box; /* Asegura que padding y border no desborden */
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+}
+
+.level-button {
+  color: white;
+  padding: 70px;
+  font-size: 40px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  width: 100%;
   text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  transition: transform 0.2s, filter 0.3s;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.level-button:hover {
+  filter: brightness(0.9);
+  transform: scale(1.02);
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.level-button.easy {
+  background-color: #f86f03;
 }
 
-#container a {
-  text-decoration: none;
+.level-button.medium {
+  background-color: #fccd2a;
+  color: black;
+}
+
+.level-button.hard {
+  background-color: #821131;
+}
+
+.custom-button {
+  --background: #f86f03;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.custom-button ion-icon {
+  margin-right: 8px;
+}
+ion-button {
+  --background: linear-gradient(90deg, #ffa500 60%, #ffd700 100%);
+  --color: #fffbea;
+  --border-radius: 20px;
+  --box-shadow: 0 4px 12px #d2b48c88;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-left: 16px;
+  transition: transform 0.1s;
+}
+
+.slide-in-blurred-left {
+  animation: slide-in-blurred-left 0.6s both;
+}
+@keyframes slide-in-blurred-left {
+  0% {
+    transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+    filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) scaleY(1) scaleX(1);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.slide-bck-center {
+  animation: slide-bck-center 0.7s both;
+}
+@keyframes slide-bck-center {
+  0% {
+    transform: translateZ(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateZ(-400px);
+    opacity: 0;
+  }
+}
+
+/* Estilos básicos para el contenedor del spinner */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+  width: 100%;
+}
+
+/* Personalizar el tamaño y color del spinner (combinados en una sola regla) */
+.loading-spinner ion-spinner {
+  --size: 90px; /* Tamaño personalizado más grande */
+  --color: #3880ff; /* Color azul de Ionic por defecto */
 }

@@ -1,0 +1,63 @@
+ion-content {
+  --background: linear-gradient(
+    135deg,
+    #fccd2a,
+    #f86f03
+  ); // Fondo degradado igual al home
+  border-left: 7px solid #821131; // Rojo oscuro para contraste
+  .header {
+    padding: 0 12vw;
+    margin-top: 9em;
+    color: #821131; // Rojo oscuro para texto
+
+    h3 {
+      font-size: 1.1rem;
+      color: #821131;
+      span {
+        color: #fccd2a; // Amarillo para resaltar
+      }
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: #821131; // Consistencia con el texto
+    }
+  }
+
+  .form {
+    margin-top: 70px;
+    ion-input {
+      --background: #fccd2a; // Amarillo cálido
+      --padding-start: 33px;
+      height: 55px;
+      border-radius: 25px;
+      margin-bottom: 22px;
+      --placeholder-color: #f86f03; // Naranja para placeholders
+      --color: #821131; // Texto en rojo oscuro
+    }
+  }
+  .login-btn {
+    width: 50vw;
+    background-color: #821131; // Naranja para el botón
+    margin-top: 100px;
+    padding: 20px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    justify-content: flex-end;
+    color: #ffffff; // Texto blanco para contraste
+    ion-icon {
+      margin-left: 30px;
+    }
+  }
+  .footer {
+    color: #821131; // Rojo oscuro para consistencia
+    padding: 0 12vw;
+    margin-top: 100px;
+    text-align: center;
+  }
+}

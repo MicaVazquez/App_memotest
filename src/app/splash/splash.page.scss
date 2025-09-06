@@ -1,0 +1,409 @@
+// Contenedor principal
+.splash-container {
+  --background: var(--splash-orange);
+  position: relative;
+  overflow: hidden;
+  --splash-orange: #ff9966;
+  --splash-blue: #2e5bba;
+  --splash-light-blue: #7fdbda;
+}
+
+.splash-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  z-index: 2;
+}
+
+// Logo hexagonal
+.logo-container {
+  animation: logoFloat 3s ease-in-out infinite;
+}
+
+.logo-card {
+  --background: transparent;
+  box-shadow: none;
+  margin: 0;
+}
+
+.hexagon-logo {
+  width: 140px;
+  height: 140px;
+  background: var(--splash-blue);
+  clip-path: polygon(
+    50% 0%,
+    93.3% 25%,
+    93.3% 75%,
+    50% 100%,
+    6.7% 75%,
+    6.7% 25%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 32px rgba(46, 91, 186, 0.4);
+  animation: pulse 2s ease-in-out infinite;
+  position: relative;
+}
+
+.inner-hexagon {
+  width: 100px;
+  height: 100px;
+  background: var(--splash-light-blue);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.brain-icon {
+  font-size: 2.5rem;
+  color: var(--splash-blue);
+  position: absolute;
+  animation: iconFloat 2.5s ease-in-out infinite;
+}
+
+.gear-icon {
+  font-size: 1.5rem;
+  color: var(--splash-blue);
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  animation: rotate 3s linear infinite;
+}
+
+// Título de la app
+.app-title-section {
+  animation: slideUp 1s ease-out 0.3s both;
+}
+
+.app-name h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin: 0;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: textGlow 3s ease-in-out infinite;
+}
+
+.app-tagline p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 0;
+  opacity: 0.95;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+// Información del usuario
+.user-info {
+  width: 100%;
+  max-width: 320px;
+  animation: slideUp 1s ease-out 0.7s both;
+}
+
+.user-profile-card {
+  --background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  animation: profilePulse 2.5s ease-in-out infinite;
+  margin: 0;
+}
+
+.user-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.user-avatar {
+  width: 50px;
+  height: 50px;
+  background: white;
+  animation: iconBounce 2s ease-in-out infinite;
+
+  ion-icon {
+    font-size: 1.8rem;
+    color: var(--splash-blue);
+  }
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.user-name h3 {
+  animation: textGlow 3s ease-in-out infinite;
+}
+
+.user-lastname h3 {
+  animation: textGlow 3s ease-in-out infinite 0.2s;
+}
+
+.division-chip {
+  --background: linear-gradient(135deg, var(--splash-blue), #1a4480);
+  --color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  animation: badgeFloat 2.5s ease-in-out infinite;
+
+  ion-icon {
+    margin-inline-end: 4px;
+  }
+}
+
+// Sección de carga
+.loading-section {
+  width: 100%;
+  max-width: 300px;
+  animation: slideUp 1s ease-out 0.9s both;
+}
+
+.custom-progress-bar {
+  --progress-background: rgba(255, 255, 255, 0.3);
+  --background: rgba(255, 255, 255, 0.15);
+  height: 8px;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+}
+
+.loading-text p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin: 8px 0 0 0;
+  opacity: 0.9;
+}
+
+// Elementos flotantes decorativos
+.floating-decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-circle {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: float 8s ease-in-out infinite;
+
+  &.circle-1 {
+    width: 60px;
+    height: 60px;
+    top: 15%;
+    left: 10%;
+    animation-delay: 0s;
+  }
+
+  &.circle-2 {
+    width: 40px;
+    height: 40px;
+    top: 60%;
+    right: 15%;
+    animation-delay: 2s;
+  }
+
+  &.circle-3 {
+    width: 80px;
+    height: 80px;
+    bottom: 20%;
+    left: 20%;
+    animation-delay: 1s;
+  }
+}
+
+// Animaciones
+@keyframes logoFloat {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 8px 32px rgba(46, 91, 186, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 12px 40px rgba(46, 91, 186, 0.5);
+  }
+}
+
+@keyframes iconFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes profilePulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  }
+}
+
+@keyframes iconBounce {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.1) rotate(-2deg);
+  }
+  50% {
+    transform: scale(1.15) rotate(0deg);
+  }
+  75% {
+    transform: scale(1.1) rotate(2deg);
+  }
+}
+
+@keyframes textGlow {
+  0%,
+  100% {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.3);
+  }
+}
+
+@keyframes badgeFloat {
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.05);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-10px) translateX(-5px);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translateY(-30px) translateX(15px);
+    opacity: 0.6;
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .hexagon-logo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .inner-hexagon {
+    width: 85px;
+    height: 85px;
+  }
+
+  .brain-icon {
+    font-size: 2rem;
+  }
+
+  .app-name h1 {
+    font-size: 1.8rem;
+    color: white;
+  }
+
+  .app-tagline p {
+    font-size: 1rem;
+    color: white;
+  }
+
+  .user-profile-card {
+    .user-content {
+      padding: 16px;
+
+      .profile-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+      }
+
+      .user-details {
+        align-items: center;
+      }
+    }
+  }
+
+  .division-chip {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">juego de memoria</string>
+    <string name="title_activity_main">juego de memoria</string>
+    <string name="package_name">com.memotest.app</string>
+    <string name="custom_url_scheme">com.memotest.app</string>
+</resources>
